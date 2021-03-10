@@ -1,0 +1,33 @@
+package com.eweather.android.db
+
+import org.litepal.crud.LitePalSupport
+
+class County : LitePalSupport(){
+    private var id:Int = -1
+    private var countyName:String = ""
+    private var weatherId:Int = -1
+    private var cityId:Int = -1
+
+    fun setId(value: Int){
+        id = value
+    }
+
+    fun getId() : Int = id
+
+    fun setCountyName(value:String){
+        countyName = value
+    }
+    fun getCountyName():String = countyName
+
+    fun setWeatherId(value: Int){
+        id = value
+    }
+
+    fun getWeatherId() : Int = weatherId
+
+    fun setCityId(value: Int){
+        id = value
+    }
+
+    fun getCityId() : Int = cityId
+}
