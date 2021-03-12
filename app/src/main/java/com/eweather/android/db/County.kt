@@ -5,7 +5,7 @@ import org.litepal.crud.LitePalSupport
 class County : LitePalSupport(){
     private var id:Int = -1
     private var countyName:String = ""
-    private var weatherId:Int = -1
+    private var weatherId:String = ""
     private var cityId:Int = -1
 
     fun setId(value: Int){
@@ -19,14 +19,14 @@ class County : LitePalSupport(){
     }
     fun getCountyName():String = countyName
 
-    fun setWeatherId(value: Int){
-        id = value
+    fun setWeatherId(value: String){
+        weatherId = value
     }
 
-    fun getWeatherId() : Int = weatherId
+    fun getWeatherId() : String = weatherId
 
     fun setCityId(value: Int){
-        id = value
+        cityId = value
     }
 
     fun getCityId() : Int = cityId

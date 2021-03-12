@@ -26,6 +26,6 @@ class Province : LitePalSupport() {
     }
 
     fun setprovinceCode(value:Int){
-        id = value;
+        provinceCode = value;
     }
 }
