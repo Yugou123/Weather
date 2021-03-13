@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Weather</string>
     <string name="loading">加载中。。。</string>
+    <string name="forcast">预报</string>
+    <string name="aqi_title">空气质量</string>
+    <string name="aqi_index">AQI指数</string>
+    <string name="pm25_index">PM2.5指数</string>
+    <string name="life_sg">生活建议</string>
 </resources>

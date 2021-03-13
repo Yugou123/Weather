@@ -4,9 +4,12 @@ import android.text.TextUtils
 import com.eweather.android.db.City
 import com.eweather.android.db.County
 import com.eweather.android.db.Province
+import com.eweather.android.gson.Weather
+import com.google.gson.Gson
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import java.lang.Exception
 
 class Utility {
     companion object{
@@ -70,6 +73,18 @@ class Utility {
             }
 
             return false
+        }
+
+        fun handleWeatherResponse(response: String): Weather? {
+            try {
+                val jsonObject:JSONObject = JSONObject(response)
+                val jsonArray:JSONArray = jsonObject.getJSONArray("HeWeather")
+                val weatherContent:String = jsonArray.getJSONObject(0).toString()
+                return Gson().fromJson(weatherContent,Weather::class.java)
+            }catch (e:Exception){
+                e.printStackTrace()
+            }
+            return null
         }
     }
 }

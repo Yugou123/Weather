@@ -1,6 +1,7 @@
 package com.eweather.android
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -56,6 +57,12 @@ class ChooseAreaFragment: Fragment() {
        }else if(currentLevel == LEVEL_CITY){
            selectedCity = cityList[dataList.indexOf(s)]
            queryCounty()
+       }else if(currentLevel == LEVEL_COUTY){
+           val weatherId = countyList[dataList.indexOf(s)].getWeatherId()
+           val intent:Intent = Intent(activity,WeatherActivity::class.java)
+           intent.putExtra("weather_id",weatherId);
+           startActivity(intent)
+           activity?.finish()
        }
     }
 
@@ -87,6 +94,7 @@ class ChooseAreaFragment: Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+//        progressDialog.showLoading()
         queryProvince()
     }
 
